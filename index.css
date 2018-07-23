@@ -1,0 +1,90 @@
+ * {
+     box-sizing: border-box;
+ }
+
+ .calculator {
+     max-width: 100%;
+     background: transparent;
+     position: relative;
+     top: 0;
+     bottom: 0;
+     width: 320px;
+     height: 600px;
+     margin: 0 auto;
+     border: 2px solid grey;
+     font-family: 'calculator', 'Orbitron', sans-serif;
+ }
+
+ .screen {
+     background-color: white;
+     height: 35%;
+ }
+
+ #input-screen {
+     height: 50%;
+     font-size: 3em;
+     line-height: 4em;
+     text-align: right;
+ }
+
+ #output-screen {
+     height: 50%;
+     font-size: 4em;
+     line-height: 2em;
+     text-align: right;
+     font-weight: 600;
+ }
+
+ .input-section {
+     background: #219653;
+     height: 65%;
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+ }
+
+ .number-keys {
+     background: #219653;
+     height: 100%;
+     width: 75%;
+ }
+
+ .symbol-keys {
+     background: #333333;
+     height: 100%;
+     width: 25%;
+ }
+
+ input.numbers {
+     height: 25%;
+     width: 32%;
+     margin: 0 auto;
+     font-size: 2em;
+     background-color: #219653;
+     border: 2px solid #219653;
+     color: #fff;
+ }
+
+ input.figures {
+     height: 20%;
+     width: 100%;
+     margin: 0 auto;
+     font-size: 2em;
+     background-color: #333333;
+     border: 2px solid #333333;
+     color: #fff;
+ }
+
+ .figures[value="Del"] {
+     font-size: 1em;
+ }
+
+ @media screen and (max-width: 500px) {
+     .calculator {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         width: 100%;
+         height: 100%;
+     }
+ }
