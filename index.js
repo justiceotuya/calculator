@@ -1,16 +1,19 @@
 let inputScreen = document.querySelector('#input-screen');
 let answerScreen = document.querySelector('#output-screen');
 let symbols = document.querySelectorAll('.symbols');
-let calcArray = [];
 //initially make the screen have a zero value
 inputScreen.innerText = 0;
 answerScreen.innerText = 0;
 
 
 
+
+
+
 //select all number keys and call the display function
 let num1 = document.querySelector('#number_1');
 num1.addEventListener('click', display);
+
 
 let num2 = document.querySelector('#number_2');
 num2.addEventListener('click', display);
@@ -39,6 +42,25 @@ num9.addEventListener('click', display);
 let num0 = document.querySelector('#number_0');
 num0.addEventListener('click', display);
 
+let minus = document.querySelector('#minus');
+minus.addEventListener('click', display);
+
+let times = document.querySelector('#times');
+times.addEventListener('click', display);
+
+let divide = document.querySelector('#divide');
+divide.addEventListener('click', display);
+
+let plus = document.querySelector('#plus');
+plus.addEventListener('click', display);
+
+let equals = document.querySelector('#equals');
+equals.addEventListener('click', calculate);
+equals.addEventListener('click', function () {
+    console.log('clicked');
+});
+
+
 
 //control the dot in the display, allow only one dot
 let dot = document.querySelector('#dot');
@@ -51,39 +73,50 @@ dot.addEventListener('click', function () {
 });
 
 
-//
-let equals = document.querySelector('#equals');
-equals.addEventListener('click', display);
-
-let minus = document.querySelector('#minus');
-
-let times = document.querySelector('#times');
-
-let divide = document.querySelector('#divide');
-
-let plus = document.querySelector('#plus');
-
 let clear = document.querySelector('#del');
 clear.addEventListener('click', function () {
     inputScreen.innerText = 0;
+    answerScreen.innerText = 0;
 });
 
 
 
 function display() {
-    console.log(this.innerHTML);
+    console.log(this.innerText);
     if (inputScreen.innerText == 0) {
-        inputScreen.innerText = Number(this.innerHTML);
-    } else if ((inputScreen.innerText.includes(".") && inputScreen.innerText.length >= 11) || inputScreen.innerText.length >= 10) {
+        inputScreen.innerText = this.innerHTML;
+    } else if (inputScreen.innerText.includes(".") && inputScreen.innerText.length >= 10) {
         inputScreen.innerText += "";
     } else {
-        inputScreen.innerText += Number(this.innerHTML);
+        inputScreen.innerText += this.innerHTML;
     }
 
 }
 
-//if any of the +,-,*,/ key is pressed, push the number on the screen to an array
-//display the sign
-//wait fo another input
-//rinse and repeat
-//if the equal sign is pressed, calculate the value in the array and display
+// function calculate() {
+//     let answer = eval(inputScreen.innerText);
+//     // if (answer.length >= 15) {
+//     //     answerScreen.innerText = "tetet";
+//     // } else if (answer.length > 9 && answer.length < 15) {
+//     //     answerScreen.style.fontSize = "2em";
+//     //     answerScreen.innerText = answer;
+//     //     answer += inputScreen.innerText;
+//     // }
+
+// }
+
+function calculate() {
+    let answer = eval(inputScreen.innerText);
+    if (answerScreen.innerText.length <= 15) {
+        answerScreen.innerText = answer;
+    } else {
+        answer = 'out of range';
+        answerScreen.innerText = answer;
+    }
+
+
+    // if (answer.length >= 15) {
+    // answer = "tetet";
+    console.log(answer);
+    // }
+}

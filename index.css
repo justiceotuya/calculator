@@ -1,5 +1,8 @@
 body {
-    background: radial-gradient(#232B2B, #FFFFFF);
+    background: linear-gradient(10deg, #232B2B, #FFFFFF);
+    pointer-events: absolute;
+    top: 100%;
+    bottom: 100%;
 }
 
 * {
@@ -26,9 +29,10 @@ body {
 #input-screen {
     height: 50%;
     font-size: 2em;
-    line-height: 3em;
+    line-height: 1em;
     text-align: right;
-    padding-right: 10px;
+    padding: 10px;
+    word-wrap: break-word;
 }
 
 #output-screen {
@@ -91,5 +95,29 @@ button.symbols {
         bottom: 0;
         width: 100%;
         height: 100%;
+    }
+}
+
+@media only screen and (min-device-width: 501px) and (max-device-width: 1070px) {
+    .calculator {
+        position: absolute;
+        left: 15%;
+        margin-top: 5%;
+        width: 70%;
+        height: 85%;
+        border-radius: 10px;
+        border: 20px solid rgba(210, 180, 120, 0.3);
+    }
+}
+
+@media only screen and (min-device-width: 1071px) {
+    .calculator {
+        position: absolute;
+        left: 35%;
+        margin-top: 5%;
+        width: 30%;
+        height: 85%;
+        border-radius: 10px;
+        border: 20px solid rgba(210, 255, 255, 0.3);
     }
 }
