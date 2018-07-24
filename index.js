@@ -107,16 +107,16 @@ function display() {
 
 function calculate() {
     let answer = eval(inputScreen.innerText);
-    if (answerScreen.innerText.length <= 15) {
+    if (answerScreen.innerText.length <= 9) {
+        answerScreen.style.fontSize = '3em';
         answerScreen.innerText = answer;
-    } else {
+    } else if (answerScreen.innerText.length > 9 && answerScreen.innerText.length <= 14) {
+        answerScreen.style.fontSize = '2em';
+        answerScreen.innerText = answer;
+    } else if (answerScreen.innerText.length >= 15) {
         answer = 'out of range';
         answerScreen.innerText = answer;
     }
 
 
-    // if (answer.length >= 15) {
-    // answer = "tetet";
-    console.log(answer);
-    // }
 }
