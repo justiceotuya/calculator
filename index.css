@@ -121,3 +121,18 @@ button.symbols {
         border: 20px solid rgba(210, 255, 255, 0.3);
     }
 }
+
+@media only screen and (max-device-width: 289px) {
+    .calculator {
+        width: 100%;
+    }
+    button.numbers {
+        height: 25%;
+        width: 30%;
+        margin: 0 auto;
+        font-size: 2em;
+        background-color: #219653;
+        border: 2px solid #219653;
+        color: #fff;
+    }
+}

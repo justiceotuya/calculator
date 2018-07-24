@@ -106,15 +106,18 @@ function display() {
 // }
 
 function calculate() {
-    let answer = eval(inputScreen.innerText);
-    if (answerScreen.innerText.length <= 9) {
-        answerScreen.style.fontSize = '3em';
-        answerScreen.innerText = answer;
-    } else if (answerScreen.innerText.length > 9 && answerScreen.innerText.length <= 14) {
-        answerScreen.style.fontSize = '2em';
-        answerScreen.innerText = answer;
-    } else if (answerScreen.innerText.length >= 15) {
+    var answer = eval(inputScreen.innerText);
+    // if (answerScreen.innerText.length <= 9) {
+    //     answerScreen.style.fontSize = '3em';
+    //     answerScreen.innerText = answer;
+    // } else if (inputScreen.innerText.length > 9 && inputScreen.innerText.length <= 14) {
+    //     answerScreen.style.fontSize = '2em';
+    //     answerScreen.innerText = answer;
+    // } else
+    if (answerScreen.innerText.length >= 10) {
         answer = 'out of range';
+        answerScreen.innerText = answer;
+    } else {
         answerScreen.innerText = answer;
     }
 
